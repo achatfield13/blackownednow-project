@@ -2,6 +2,8 @@ div.container{
     margin-top: 4rem;
 }
 
+/* Text Styles */
+
 .blm-text{
     font-family: 'Oswald', sans-serif;
     font-size: 5em;
@@ -11,12 +13,109 @@ div.container{
     text-transform: uppercase;
 }
 
-.responsive-image{
-    width:100%;
-    max-width: 100%;
-    height: auto;
+.blm-text-downsize{
+    font-family: 'Oswald', sans-serif;
+    font-size: 2em;
+    letter-spacing: 4px;
+    line-height: 1.2;
+    font-weight: 700;
+    text-transform: uppercase;
 }
 
+.blm-support-text{
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 1.5;
+    color: rgb(27,27,27);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    letter-spacing: unset;
+    text-transform: unset;
+}
+
+
+.blm-support-text-downsize{
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    color: rgb(27,27,27);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    letter-spacing: unset;
+    text-transform: unset;
+}
 .list-center-text{
     text-align: center;
+}
+
+h2.blm-text-downsize,h4.blm-support-text-downsize{
+    text-align: center;
+}
+
+
+#contact{
+    text-align: center;
+}
+/*End of Text Styles */
+
+
+
+h3.list-center-text ~ a>button[mat-raised-button]{
+    display: block;
+    margin: 0 auto;
+    width: 25%;
+}
+
+a{
+    text-decoration: none;
+}
+
+.support {
+    margin-top: 10%;
+}
+
+.email-input-full-width{
+    width:100%;
+    padding-right:5%;
+    margin: 0 auto;
+}
+
+form{
+    margin: 0 auto;
+}
+button[mat-stroked-button]{
+    width:15%;
+    margin-bottom: 5%;
+}
+
+#thelist{
+    background-color: #52667B;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+    width:100% !important;
+}
+
+@media(max-width: 690px){
+    img.responsive-image{
+        margin-top: 10%;
+    }
+    h3.list-center-text ~ a>button[mat-raised-button]{
+        display: block;
+        margin: 0 auto;
+        width: auto;
+    }
+
+    button[mat-stroked-button]{
+        width:30%;
+        margin-bottom: 5%;
+    }
+}
+
+@media(min-width: 750px){
+    img.responsive-image{
+        width:100%;
+        height: auto;
+    }
 }
