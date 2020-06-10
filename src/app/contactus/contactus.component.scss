@@ -1,3 +1,63 @@
 mat-form-field{
     width:100%;
 }
+
+.social-icons{
+    fill:white;
+}
+
+svg{
+    width:7vw;
+    height: 7vw;
+    margin: 0 auto;
+    transform:translate(40.5vw,1.5vw);
+    padding:0 1vw 0 1vw;
+}
+.social-area{
+    background-color: #52667B;
+    height: 10vw;
+    margin-top: 5%;
+}
+
+.blm-text-downsize{
+    font-family: 'Oswald', sans-serif;
+    font-size: 2em;
+    letter-spacing: 4px;
+    line-height: 1.2;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.blm-support-text-downsize{
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.5;
+    color: rgb(27,27,27);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    letter-spacing: unset;
+    text-transform: unset;
+}
+
+.email-input-half-width{
+    width:30vw;
+    padding-right: 2vw;
+}
+
+.subscribe-area{
+    margin-top:5vw;
+    margin-bottom: 2vw;
+}
+
+.top-space{
+    margin-top: 2vw;
+}
+
+button[mat-stroked-button]{
+    width: 100%;
+}
+
+div.container>h2{
+    text-align: center;
+    margin-top:2vw;
+}

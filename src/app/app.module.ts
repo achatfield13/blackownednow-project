@@ -9,13 +9,17 @@ import { MainComponent } from './main/main.component';
 import { NavComponent } from './shared/nav/nav.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { ContactusComponent } from './contactus/contactus.component';
+import { ThelistComponent } from './thelist/thelist.component';
+import { JoinusComponent } from './joinus/joinus.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
     AboutusComponent,
-    ContactusComponent
+    ContactusComponent,
+    ThelistComponent,
+    JoinusComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

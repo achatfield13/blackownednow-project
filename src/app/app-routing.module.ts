@@ -3,6 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { MainComponent } from './main/main.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { ContactusComponent } from './contactus/contactus.component';
+import { ThelistComponent } from './thelist/thelist.component';
+import { JoinusComponent } from './joinus/joinus.component';
 
 
 const routes: Routes = [
@@ -14,6 +16,12 @@ const routes: Routes = [
   },
   {
     path: 'contactus', component:ContactusComponent
+  },
+  {
+    path:'thelist', component:ThelistComponent
+  },
+  {
+    path: 'joinus', component:JoinusComponent
   }
 ];
 

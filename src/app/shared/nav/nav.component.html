@@ -11,8 +11,9 @@
        
         <a mat-list-item routerLink="/" (click)="drawer.close()">Home</a>
         <a mat-list-item routerLink="/aboutus" (click)="drawer.close()">About Us</a>
-        <a mat-list-item routerLink="/kanban" (click)="drawer.close()">Contact us</a>
-        <a mat-list-item routerLink="/payment" (click)="drawer.close()">Payment</a>
+        <a mat-list-item routerLink="/contactus" (click)="drawer.close()">Contact us</a>
+        <a mat-list-item routerLink="/thelist" (click)="drawer.close()">The List</a>
+        <a mat-list-item routerLink="/joinus" (click)="drawer.close()">Join us</a>
       </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content>
@@ -36,22 +37,31 @@
         <div *ngIf="!(isHandset$ | async)">
             <a mat-button routerLink="/">Home</a>
           <a mat-button routerLink="/aboutus">About Us</a>
-          <a mat-button routerLink="/contactus">contactus</a>
+          <a mat-button routerLink="/contactus">Contact us</a>
   
-          <a mat-button routerLink="/login">🔑 Login</a>
+          <a mat-button routerLink="/thelist">The List</a>
+          <a mat-button routerLink="/joinus">Join Us</a>
   
         </div>
   
         <!-- DROPDOWN MENU -->
   
-        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
-          <mat-icon>more_vert</mat-icon>
-        </button>
+        <a mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+            Social
+        </a>
         
         <mat-menu #menu="matMenu">
           <a mat-menu-item href="https://fireship.page.link/slack">
             <i>💬</i>
-            <span>Chat on Slack</span>
+            <span>Instagram</span>
+          </a>
+          <a mat-menu-item href="https://fireship.page.link/slack">
+            <i>💬</i>
+            <span>Twitter</span>
+          </a>
+          <a mat-menu-item href="https://fireship.page.link/slack">
+            <i>💬</i>
+            <span>Facebook</span>
           </a>
         </mat-menu>
       </mat-toolbar>
