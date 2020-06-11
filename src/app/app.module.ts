@@ -6,11 +6,15 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
 import { MainComponent } from './main/main.component';
-import { NavComponent } from './shared/nav/nav.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { ThelistComponent } from './thelist/thelist.component';
-import { JoinusComponent } from './joinus/joinus.component';
+import { JoinusComponent, BlackOwnedNowDialogComponent } from './joinus/joinus.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { ReactiveFormsModule } from '@angular/forms';
+import {MatSelectModule} from '@angular/material/select';
+import { MatInputModule } from '@angular/material/input';
+
 
 @NgModule({
   declarations: [
@@ -19,13 +23,18 @@ import { JoinusComponent } from './joinus/joinus.component';
     AboutusComponent,
     ContactusComponent,
     ThelistComponent,
-    JoinusComponent
+    JoinusComponent,
+    BlackOwnedNowDialogComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     BrowserAnimationsModule,
-    SharedModule
+    SharedModule,
+    MatDialogModule,
+    MatSelectModule,
+    MatInputModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
