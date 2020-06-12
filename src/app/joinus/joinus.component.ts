@@ -1,6 +1,10 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialog, MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+
+import { AuthService } from '../services/auth.service';
+
+import { AngularFirestore } from '@angular/fire/firestore';
 @Component({
   selector: 'app-joinus',
   templateUrl: './joinus.component.html',
@@ -42,7 +46,7 @@ name: string,
   templateUrl: 'black-owned-now-add-dialog.html'
 })
 
-export class BlackOwnedNowDialogComponent {
+export class BlackOwnedNowDialogComponent implements OnInit {
 
   businessTypes: bizTypes[] = [
     {value: 'accessories', viewValue: 'Accessories'},
@@ -302,8 +306,11 @@ export class BlackOwnedNowDialogComponent {
     }
 ]
 
+ user: string;
+
   constructor (public dialogRef: MatDialogRef<BlackOwnedNowDialogComponent>,
-  @Inject(MAT_DIALOG_DATA) public data) {}
+    private auth: AuthService,
+  @Inject(MAT_DIALOG_DATA) public data, private fs: AngularFirestore) {}
 
     newBusinessForm = new FormGroup({
       businessName: new FormControl('',Validators.required),
@@ -317,12 +324,36 @@ export class BlackOwnedNowDialogComponent {
       instagramHandle: new FormControl('',Validators.required)
     })
 
-    getFormData(){
-      console.log(this.newBusinessForm.value)
+     async getFormData(){
+      
+
+      console.log(this.user)
+
+      if(await this.user){
+        
+        console.log(this.newBusinessForm.value)
+        this.fs.collection('test').add({
+          business_name:this.newBusinessForm.value.businessName
+        })
+        .then((response => console.log(response)))
+        .catch((err) => console.log(err))
+      }
     }
 
 
 
+    async AnonSignin(){
+      
+      await this.auth.anonUser().then((result => {
+        console.log(result)
+         this.user = result.user.uid;
+         console.log(this.user)
+      } )) 
+    }
+
+    ngOnInit(): void {
+      this.AnonSignin()
+    }
 
   onNoClick(): void {
     this.dialogRef.close();

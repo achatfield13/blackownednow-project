@@ -14,6 +14,9 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatSelectModule} from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
+import { AngularFireModule } from '@angular/fire';
+import { environment } from '../environments/environment';
+import { AuthService } from './services/auth.service';
 
 
 @NgModule({
@@ -34,7 +37,8 @@ import { MatInputModule } from '@angular/material/input';
     MatDialogModule,
     MatSelectModule,
     MatInputModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebase)
   ],
   providers: [],
   bootstrap: [AppComponent]
