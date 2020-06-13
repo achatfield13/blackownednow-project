@@ -5,7 +5,7 @@
             <ais-clear-refinements></ais-clear-refinements>
             <ais-current-refinements></ais-current-refinements>
             <h2>Business by City</h2>
-            <ais-refinement-list attribute="business_category" searchable></ais-refinement-list>
+            <ais-refinement-list class="test-refine" attribute="business_city" searchable></ais-refinement-list>
             <ais-configure [searchParameters]="{ hitsPerPage: 8 }"></ais-configure>
         </div>
         <div class="right-panel">
@@ -16,6 +16,9 @@
                         <li *ngFor="let hit of hits" class="ais-Hits-item">
                             <div class="hit-name">
                                 <ais-highlight attribute="business_name" [hit]="hit"></ais-highlight>
+                            </div>
+                            <div class="hit-name">
+                                <ais-highlight attribute="business_city" [hit]="hit"></ais-highlight>
                             </div>
                             <div class="hit-description">
                                 <ais-highlight attribute="business_description" [hit]="hit"></ais-highlight>

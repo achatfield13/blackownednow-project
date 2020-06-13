@@ -11,7 +11,7 @@ import { ContactusComponent } from './contactus/contactus.component';
 import { ThelistComponent } from './thelist/thelist.component';
 import { JoinusComponent, BlackOwnedNowDialogComponent } from './joinus/joinus.component';
 import { MatDialogModule } from '@angular/material/dialog';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import {MatSelectModule} from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { AngularFireModule } from '@angular/fire';
@@ -40,6 +40,7 @@ import { NgAisModule } from 'angular-instantsearch';
     MatSelectModule,
     MatInputModule,
     ReactiveFormsModule,
+    FormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     NgAisModule.forRoot()
   ],
