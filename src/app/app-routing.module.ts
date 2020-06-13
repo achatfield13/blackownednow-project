@@ -5,6 +5,7 @@ import { AboutusComponent } from './aboutus/aboutus.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { ThelistComponent } from './thelist/thelist.component';
 import { JoinusComponent } from './joinus/joinus.component';
+import { ListSearchComponent } from './list-search/list-search.component';
 
 
 const routes: Routes = [
@@ -22,6 +23,9 @@ const routes: Routes = [
   },
   {
     path: 'joinus', component:JoinusComponent
+  },
+  {
+    path: 'listsearch', component: ListSearchComponent
   }
 ];
 

@@ -17,7 +17,8 @@ import { MatInputModule } from '@angular/material/input';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 import { AuthService } from './services/auth.service';
-
+import { ListSearchComponent } from './list-search/list-search.component';
+import { NgAisModule } from 'angular-instantsearch';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { AuthService } from './services/auth.service';
     ThelistComponent,
     JoinusComponent,
     BlackOwnedNowDialogComponent,
+    ListSearchComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
@@ -38,7 +40,8 @@ import { AuthService } from './services/auth.service';
     MatSelectModule,
     MatInputModule,
     ReactiveFormsModule,
-    AngularFireModule.initializeApp(environment.firebase)
+    AngularFireModule.initializeApp(environment.firebase),
+    NgAisModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
