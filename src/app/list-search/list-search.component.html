@@ -1,33 +1,42 @@
-<div class="ais-InstantSearch">
-    <h1>Black Owned Now - The List</h1>
-    <ais-instantsearch [config]="config">
-        <div class="left-panel">
-            <ais-clear-refinements></ais-clear-refinements>
-            <ais-current-refinements></ais-current-refinements>
-            <h2>Business by City</h2>
-            <ais-refinement-list class="test-refine" attribute="business_city" searchable></ais-refinement-list>
-            <ais-configure [searchParameters]="{ hitsPerPage: 8 }"></ais-configure>
-        </div>
-        <div class="right-panel">
-            <ais-search-box></ais-search-box>
-            <ais-hits>
-                <ng-template let-hits="hits">
-                    <ol class="ais-Hits-list">
-                        <li *ngFor="let hit of hits" class="ais-Hits-item">
-                            <div class="hit-name">
+
+
+  <div class="ais-InstantSearch">
+      <h1>Black Owned Now - The List</h1>
+      <ais-instantsearch [config]="config">
+          <header class="header">
+            <ais-search-box ></ais-search-box>
+          </header>
+
+          <section class="product-filter">
+              <h1>The List</h1>
+              <ais-clear-refinements></ais-clear-refinements>
+              <ais-current-refinements></ais-current-refinements>
+              <div class="sort">
+                  <div class="collection-sort">
+                      <label>Filter By: Category</label>
+                     <ais-category-menu-select attribute="business_category"></ais-category-menu-select> 
+                  </div>
+                  <div class="collection-sort">
+                      <label>Filter By: City</label>
+                      <ais-business-menu-select attribute="business_city"></ais-business-menu-select>
+                </div>
+              </div>
+          </section>
+          <section class="products">
+              <ais-hits>
+                  <ng-template let-hits="hits">
+                      <div class="product-card" *ngFor="let hit of hits">
+                          <div class="product-image">
+                            
+                          </div>
+                          <div class="product-info">
                                 <ais-highlight attribute="business_name" [hit]="hit"></ais-highlight>
-                            </div>
-                            <div class="hit-name">
-                                <ais-highlight attribute="business_city" [hit]="hit"></ais-highlight>
-                            </div>
-                            <div class="hit-description">
                                 <ais-highlight attribute="business_description" [hit]="hit"></ais-highlight>
-                            </div>
-                        </li>
-                    </ol>
-                </ng-template>
-            </ais-hits>
-            <ais-pagination></ais-pagination>
-        </div>
-    </ais-instantsearch>
-</div>
+                          </div>
+                      </div>
+                  </ng-template>
+              </ais-hits>
+          </section>
+      </ais-instantsearch>
+  </div>
+  

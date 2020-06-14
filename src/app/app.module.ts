@@ -19,6 +19,8 @@ import { environment } from '../environments/environment';
 import { AuthService } from './services/auth.service';
 import { ListSearchComponent } from './list-search/list-search.component';
 import { NgAisModule } from 'angular-instantsearch';
+import { MenuSelect } from './list-search/busines_city_menu-select.component';
+import { CategoryMenuSelect } from './list-search/category_menu-select.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,8 @@ import { NgAisModule } from 'angular-instantsearch';
     JoinusComponent,
     BlackOwnedNowDialogComponent,
     ListSearchComponent,
+    MenuSelect,
+    CategoryMenuSelect
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

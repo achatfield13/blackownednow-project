@@ -13,10 +13,12 @@ const searchClient = algoliasearch(
 })
 export class ListSearchComponent implements OnInit {
 
+
   config = {
     indexName: 'blackownednow-list',
     searchClient
   }
+  
   
 
   constructor() { }

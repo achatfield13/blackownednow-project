@@ -1,4 +1,6 @@
 
+
+
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
 @import '~@angular/material/theming';
@@ -6,6 +8,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
 // Plus imports for other components in your app.
+
+
+@import '~angular-instantsearch/bundles/instantsearch.css';
 
 // Include the common styles for Angular Material. We include this here so that you only
 // have to load a single css file for Angular Material in your app.
@@ -41,12 +46,46 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-
     height: auto;
 }
 
+.ais-SearchBox .ais-SearchBox-input {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 48px 0 rgba(0,0,0,.2);
+    font-family: Hind,sans-serif;
+    height: 5vw;
+    padding: 0.20833333333333334vw 2.5vw 0 3.3333333333333335vw;
+}
+
+.ais-SearchBox-submit{
+    left: 1.3vw !important;
+}
+
+
+
+
+
+@media(max-width: 870px){
+    .ais-SearchBox .ais-SearchBox-input {
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 48px 0 rgba(0,0,0,.2);
+        font-family: Hind,sans-serif;
+        height: 8vw;
+        padding: 0.20833333333333334vw 2.5vw 0 3.3333333333333335vw;
+    }
+    
+    .ais-SearchBox-submit{
+        display: none;
+    }
+}
+
 .ais-SearchBox { margin-bottom: 1em }
 .ais-Pagination { margin-top: 1em }
 .left-panel { float: left; width: 250px }
 .right-panel { margin-left: 260px }
-.ais-InstantSearch { max-width: 960px; overflow: hidden; margin: 0 auto }
-.ais-Hits-item { margin-bottom: 1em; width: calc(50% - 1rem) }
-.ais-Hits-item img { margin-right: 1em }
-.hit-name { margin-bottom: .5em }
-.hit-description { color: #888; font-size: 14px; margin-bottom: .5em }
+.ais-InstantSearch { max-width: 100%; overflow: hidden; margin: 0 auto }
+
+
+
+
+
+

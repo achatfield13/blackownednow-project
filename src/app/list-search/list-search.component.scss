@@ -1,64 +1,288 @@
+.test{
+  width: 50vw;
+  margin: 2vw auto 2vw auto;
+}
 .header {
-    display: flex;
-    align-items: center;
-    min-height: 50px;
-    padding: 0.5rem 1rem;
-    background-image: linear-gradient(to right, #c3002f, #dd0031);
-    color: #fff;
-    margin-bottom: 1rem;
-  }
-  
-  .header a {
-    color: #fff;
-    text-decoration: none;
-  }
-  
-  .header-title {
-    font-size: 1.2rem;
-    font-weight: normal;
-  }
-  
-  .header-title::after {
-    content: ' ▸ ';
-    padding: 0 0.5rem;
-  }
-  
-  .header-subtitle {
-    font-size: 1.2rem;
-  }
-  
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 1rem;
-  }
-  
-  .search-panel {
-    display: flex;
-  }
-  
-  .search-panel__filters {
-    flex: 1;
-  }
-  
-  .search-panel__results {
-    flex: 3;
-  }
-  
-  .searchbox {
-    margin-bottom: 2rem;
-  }
-  
-  .pagination {
-    margin: 2rem auto;
-    text-align: center;
-  }
+  -webkit-box-align: center;
+  align-items: center;
+  background: -webkit-gradient(linear,left top,left bottom,from(#fbc300),to(#c98a00));
+  background: linear-gradient(to bottom,#fbc300,#c98a00);
+  background-image: url(https://images.unsplash.com/photo-1559526324-593bc073d938?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);
+  background-image: url(https://images.unsplash.com/photo-1559526324-593bc073d938?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80),-webkit-gradient(linear,left top,left bottom,from(#fbc300),to(#c98a00));
+  background-image: url(https://images.unsplash.com/photo-1559526324-593bc073d938?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80),linear-gradient(to bottom,#fbc300,#c98a00);
+  background-position: center;
+  background-size: cover;
+  color: #fff;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  justify-content: center;
+  min-height: 368px;
+  padding: .5rem 1rem;
+  text-align: center;
+}
 
-  .test-refine{
-      background-color: red;
-  }
+.container {
+  display: -webkit-box;
+  display: flex;
+  margin: 0 auto;
+  max-width: 1300px;
+  padding: 2rem 1rem;
+}
 
-  .ais-highlight{
-    display: table-cell;
-    word-wrap: break-word;
-  }
+.container-filters {
+  -webkit-box-flex: 1;
+  flex: 1;
+  margin-right: 60px;
+  max-width: 260px;
+}
+
+.container-header {
+  -webkit-box-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  min-height: 80px;
+}
+
+.search-panel {
+  display: flex;
+}
+
+.search-panel__filters {
+  flex: 1;
+}
+
+.search-panel__results {
+  flex: 3;
+}
+
+.searchbox {
+  margin-bottom: 2rem;
+}
+
+.pagination {
+  margin: 2rem auto;
+  text-align: center;
+}
+
+
+
+
+/*------------------------------------*\
+    RESET
+\*------------------------------------*/
+/* https://meyerweb.com/eric/tools/css/reset/ 
+    v2.0b1 | 201101 
+    NOTE:WORK IN PROGRESS
+    USE WITH CAUTION AND TEST WITH ABANDON */
+
+    html,body,div,span,applet,object,iframe,
+    h1,h2,h3,h4,h5,h6,p,blockquote,pre,
+    a,abbr,acronym,address,big,cite,code,
+    del,dfn,em,img,ins,kbd,q,s,samp,
+    small,strike,strong,sub,sup,tt,var,
+    b,u,i,center,
+    dl,dt,dd,ol,ul,li,
+    fieldset,form,label,legend,
+    table,caption,tbody,tfoot,thead,tr,th,td,
+    article,aside,canvas,details,figcaption,figure,
+    footer,header,hgroup,menu,nav,section,summary,
+    time,mark,audio,video{
+        margin:0;
+        padding:0;
+        border:0;
+        outline:0;
+        font-size:100%;
+        font:inherit;
+        vertical-align:baseline;
+    }
+    /* HTML5 display-role reset for older browsers */
+    article,aside,details,figcaption,figure,
+    footer,header,hgroup,menu,nav,section{
+        display:block;
+    }
+    body{
+        line-height:1;
+    }
+    ol,ul{
+        list-style:none;
+    }
+    blockquote,q{
+        quotes:none;
+    }
+    blockquote:before,blockquote:after,
+    q:before,q:after{
+        content:’’;
+        content:none;
+    }
+    /* remember to define visible focus styles! 
+    :focus{
+        outline:?????;
+    } */
+    
+    /* remember to highlight inserts somehow! */
+    ins{
+        text-decoration:none;
+    }
+    del{
+        text-decoration:line-through;
+    }
+    
+    table{
+        border-collapse:collapse;
+        border-spacing:0;
+    }
+    
+    /*------------------------------------*\
+        $MAIN
+    \*------------------------------------*/
+    
+    @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500);
+    
+    body {
+      margin: 0 auto;
+      width: 90%;
+      max-width: 1240px;
+      font-family: 'Roboto', sans-serif;
+      background-color: #f6f6f6;
+    }
+    
+    /* Typography */
+    
+    h1 {
+      font-size: 28px;
+      font-weight: 300;
+      flex: 1;
+    }
+    
+    h5 {
+      font-weight: 500;
+      line-height: 1.7em;
+    }
+    
+    h6 {
+      color: #666;
+      font-size: 14px;
+    }
+    
+    /* Product Layout */
+    
+    .product-filter {
+      display: flex;
+      padding: 30px 0;
+    }
+    
+    .sort {
+      display: flex;
+      align-self: flex-end;
+    }
+    
+    .collection-sort {
+     display: flex;
+      flex-direction: column;
+    }
+    
+    .collection-sort:first-child {
+      padding-right: 20px;
+    }
+    
+    label {
+      color: #666;
+      font-size: 10px;
+      font-weight: 500;
+      line-height: 2em;
+      text-transform: uppercase;
+    }
+    
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    
+    .product-card {
+      display: flex;
+      flex-direction: column;
+      
+      padding: 2%;
+      flex: 1 16%;
+      
+      background-color: #FFF;
+      box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.25);
+    }
+    
+    .product-image img {
+      width: 100%;
+    }
+    
+    .product-info {
+      margin-top: auto;
+      padding-top: 20px;
+      text-align: center;
+    }
+    
+    @media ( max-width: 920px ) {
+      
+      .product-card {
+        flex: 1 21%;
+      }
+      
+      .products .product-card:first-child, 
+      .products .product-card:nth-child(2) {
+        flex: 2 46%;
+      }
+      
+    }
+    
+    @media ( max-width: 600px ) {
+      
+      .product-card {
+        flex: 1 46%;
+      }
+      
+    }
+    
+    @media ( max-width: 480px ) {
+      
+      h1 {
+        margin-bottom: 20px;
+      }
+      
+      .product-filter {
+        flex-direction: column;
+      }
+      
+      .sort {
+        align-self: flex-start;
+      }
+      
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
