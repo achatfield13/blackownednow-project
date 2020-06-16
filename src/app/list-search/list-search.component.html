@@ -1,14 +1,13 @@
 
 
   <div class="ais-InstantSearch">
-      <h1>Black Owned Now - The List</h1>
       <ais-instantsearch [config]="config">
           <header class="header">
             <ais-search-box ></ais-search-box>
           </header>
 
           <section class="product-filter">
-              <h1>The List</h1>
+              <h1>Black Owned Now - The List</h1>
               <ais-clear-refinements></ais-clear-refinements>
               <ais-current-refinements></ais-current-refinements>
               <div class="sort">
@@ -30,12 +29,27 @@
                             
                           </div>
                           <div class="product-info">
-                                <ais-highlight attribute="business_name" [hit]="hit"></ais-highlight>
-                                <ais-highlight attribute="business_description" [hit]="hit"></ais-highlight>
+                                <h1><ais-highlight attribute="business_name" [hit]="hit"></ais-highlight></h1>
+                                <a href="{{ hit.business_website | removeTrailingCharacter }}"><h1><ais-highlight attribute="business_website" [hit]="hit"></ais-highlight></h1></a>
+                                <div class="city-cat-row">
+                                    <div class="city-cat-column">
+                                        <h3><ais-highlight attribute="business_city" [hit]="hit"></ais-highlight></h3>
+                                        <h3>Instagram Handle: <ais-highlight attribute="instagram_handle" [hit]="hit"></ais-highlight></h3>
+                                    </div>
+                                    <div class="city-cat-column">
+                                            <h3><ais-highlight attribute="business_category" [hit]="hit"></ais-highlight></h3>
+                                            <h3>Facebook Handle: <ais-highlight attribute="facebook_handle" [hit]="hit"></ais-highlight></h3>
+                                    </div>
+                                </div>
+                                <hr>
+                                <p><ais-highlight attribute="business_description" [hit]="hit"></ais-highlight></p>
                           </div>
                       </div>
                   </ng-template>
               </ais-hits>
+              <div class="center-pag">
+                  <ais-pagination></ais-pagination>
+              </div>
           </section>
       </ais-instantsearch>
   </div>

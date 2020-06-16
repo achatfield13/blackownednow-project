@@ -20,24 +20,63 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$blackownednow-primary: mat-palette($mat-indigo);
-$blackownednow-accent: mat-palette($mat-pink, A200, A100, A400);
+$custom-orange: (
+    50: #fff3e0,
+    100: #ffe0b2,
+    200: #ffcc80,
+    300: #ffb74d,
+    400: #ffa726,
+    500: #ff9800,
+    600: #fb8c00,
+    700: #f57c00,
+    800: #ef6c00,
+    900: #e65100,
+    A100: #ffd180,
+    A200: #ffab40,
+    A400: #ff9100,
+    A700: #ff6d00,
+    contrast: (
+        50: $black-87-opacity,
+        100: $black-87-opacity,
+        200: $black-87-opacity,
+        300: $black-87-opacity,
+        400: $black-87-opacity,
+        500: white,
+        600: white,
+        700: white,
+        800: white,
+        900: white,
+        A100: $black-87-opacity,
+        A200: $black-87-opacity,
+        A400: $black-87-opacity,
+        A700: white,
+    )
+);
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$firestarter-primary: mat-palette($custom-orange);
+$firestarter-accent: mat-palette($mat-green, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
-$blackownednow-warn: mat-palette($mat-red);
+$firestarter-warn: mat-palette($mat-red);
 
 // Create the theme object (a Sass map containing all of the palettes).
-$blackownednow-theme: mat-light-theme($blackownednow-primary, $blackownednow-accent, $blackownednow-warn);
+$firestarter-theme: mat-dark-theme($firestarter-primary, $firestarter-accent, $firestarter-warn);
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
-@include angular-material-theme($blackownednow-theme);
+@include angular-material-theme($firestarter-theme);
+
+/* You can add global styles to this file, and also import other style files */
 
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-color: white; }
+
 
 
 .responsive-image{
@@ -46,19 +85,28 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-
     height: auto;
 }
 
-.ais-SearchBox .ais-SearchBox-input {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 48px 0 rgba(0,0,0,.2);
-    font-family: Hind,sans-serif;
-    height: 5vw;
-    padding: 0.20833333333333334vw 2.5vw 0 3.3333333333333335vw;
-}
+// .ais-SearchBox .ais-SearchBox-input {
+//     background-color: #fff;
+//     border-radius: 8px;
+//     box-shadow: 0 4px 48px 0 rgba(0,0,0,.2);
+//     font-family: Hind,sans-serif;
+//     height: auto;
+//     padding: 2vw 2vw 2vw 2vw;
+//     width: 100%;
+// }
 
 .ais-SearchBox-submit{
-    left: 1.3vw !important;
+    left: .5vw !important;
 }
 
+
+.ais-pagination{
+    width: 75%;
+}
+
+.ais-Highlight{
+    
+}
 
 
 
@@ -78,7 +126,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-
     }
 }
 
-.ais-SearchBox { margin-bottom: 1em }
+// .ais-SearchBox { margin-bottom: 1em }
 .ais-Pagination { margin-top: 1em }
 .left-panel { float: left; width: 250px }
 .right-panel { margin-left: 260px }

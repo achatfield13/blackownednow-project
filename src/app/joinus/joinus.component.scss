@@ -8,6 +8,10 @@ button[mat-stroked-button]{
     width: 20vw;
 }
 
+input[matInput],textarea[matInput]{
+    width: 100%;
+}
+
 @media(max-width:730px){
     button[mat-stroked-button]{
         width: auto;

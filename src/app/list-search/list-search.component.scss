@@ -208,6 +208,8 @@
     .product-card {
       display: flex;
       flex-direction: column;
+
+      margin-bottom: 5vw;
       
       padding: 2%;
       flex: 1 16%;
@@ -224,6 +226,10 @@
       margin-top: auto;
       padding-top: 20px;
       text-align: center;
+    }
+
+    section>h1{
+      transform: none;
     }
     
     @media ( max-width: 920px ) {
@@ -251,6 +257,7 @@
       
       h1 {
         margin-bottom: 20px;
+        text-align: center;
       }
       
       .product-filter {
@@ -261,6 +268,30 @@
         align-self: flex-start;
       }
       
+    }
+
+    .center-pag{
+      margin: 0 auto;
+      max-width: 75%;
+    }
+
+    .city-cat-row{
+      display:flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      width: 100%;
+    }
+
+    .city-cat-column{
+      display: flex;
+      flex-direction: column;
+      flex-basis: 100%;
+      flex: 1;
+    }
+
+    h1{
+      transform: translate(10px, -2vw);
+      font-weight: 500;
     }
     
     

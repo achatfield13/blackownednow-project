@@ -16,7 +16,7 @@ export class JoinusComponent implements OnInit {
 
   openDialog(): void {
     const dialRef = this.dialog.open(BlackOwnedNowDialogComponent, {
-      width: '250px',
+      width: 'auto',
     });
 
     dialRef.afterClosed().subscribe(result => {
