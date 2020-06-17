@@ -1,56 +1,52 @@
 
 
-  <div class="ais-InstantSearch">
-      <ais-instantsearch [config]="config">
-          <header class="header">
-            <ais-search-box ></ais-search-box>
-          </header>
 
-          <section class="product-filter">
-              <h1>Black Owned Now - The List</h1>
-              <ais-clear-refinements></ais-clear-refinements>
-              <ais-current-refinements></ais-current-refinements>
-              <div class="sort">
-                  <div class="collection-sort">
-                      <label>Filter By: Category</label>
-                     <ais-category-menu-select attribute="business_category"></ais-category-menu-select> 
+<div class="ais-InstantSearch">
+<ais-instantsearch [config]="config">
+        <header class="header">
+                <ais-search-box ></ais-search-box>
+        </header>
+        <section class="product-filter">
+                <h1>Black Owned Now - The List</h1>
+                <div class="sort">
+                    <div class="collection-sort">
+                    <ais-clear-refinements></ais-clear-refinements>
+                    <ais-current-refinements></ais-current-refinements>
+                        <label>Filter By: Category</label>
+                       <ais-category-menu-select attribute="business_category"></ais-category-menu-select> 
+                    </div>
+                    <div class="collection-sort">
+                        <label>Filter By: City</label>
+                        <ais-business-menu-select attribute="business_city"></ais-business-menu-select>
                   </div>
-                  <div class="collection-sort">
-                      <label>Filter By: City</label>
-                      <ais-business-menu-select attribute="business_city"></ais-business-menu-select>
                 </div>
-              </div>
-          </section>
-          <section class="products">
-              <ais-hits>
+            </section>
+              <ais-hits >
                   <ng-template let-hits="hits">
-                      <div class="product-card" *ngFor="let hit of hits">
-                          <div class="product-image">
-                            
-                          </div>
-                          <div class="product-info">
-                                <h1><ais-highlight attribute="business_name" [hit]="hit"></ais-highlight></h1>
-                                <a href="{{ hit.business_website | removeTrailingCharacter }}"><h1><ais-highlight attribute="business_website" [hit]="hit"></ais-highlight></h1></a>
-                                <div class="city-cat-row">
-                                    <div class="city-cat-column">
-                                        <h3><ais-highlight attribute="business_city" [hit]="hit"></ais-highlight></h3>
-                                        <h3>Instagram Handle: <ais-highlight attribute="instagram_handle" [hit]="hit"></ais-highlight></h3>
-                                    </div>
-                                    <div class="city-cat-column">
-                                            <h3><ais-highlight attribute="business_category" [hit]="hit"></ais-highlight></h3>
-                                            <h3>Facebook Handle: <ais-highlight attribute="facebook_handle" [hit]="hit"></ais-highlight></h3>
-                                    </div>
-                                </div>
-                                <hr>
-                                <p><ais-highlight attribute="business_description" [hit]="hit"></ais-highlight></p>
-                          </div>
-                      </div>
+                      <main class="main-grid">
+                          <article class="grid-item-business" *ngFor="let hit of hits">
+                            <div>
+                                <h2><ais-highlight attribute="business_name" [hit]="hit"></ais-highlight></h2>
+                                <span>{{ hit.business_description }}</span>
+                            </div>
+                            <div>
+                                <span>City: {{ hit.business_city }}</span>
+                                <span>Instagram: {{ hit.instagram_handle }}</span>
+                            </div>
+                            <div>
+                                <a href="{{ hit.business_website | removeTrailingCharacter }}">
+                                    <button class="pure-material-button-contained">Website</button>
+                                </a>
+                                <span>Facebook: {{ hit.facebook_handle }}</span>
+                            </div>
+                          </article>
+                      </main>
                   </ng-template>
               </ais-hits>
-              <div class="center-pag">
+              <div class="results">
                   <ais-pagination></ais-pagination>
+                  <span><ais-hits-per-page [items]="[{ label: '8 results per page', value: 8, default:true},{label: '4 results per page', value: 4}]"></ais-hits-per-page></span>
               </div>
-          </section>
+          
       </ais-instantsearch>
   </div>
-  
