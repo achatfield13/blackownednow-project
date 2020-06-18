@@ -3,10 +3,10 @@
         <div class="col-md-6 col-sm-6 col-xs-6">
             <h1 class="blm-text">Access Our black Owned Business list below</h1>
             <h3 class="blm-support-text">"We support all black-owned <br> businesses!"</h3>
-            <a href="#"><button mat-raised-button>The list</button></a>
+            <a routerLink = '/listsearch'><button mat-raised-button>The list</button></a>
         </div>
         <div class="col-md-6">
-            <img class="responsive-image"src="https://via.placeholder.com/728x522" alt="">
+            <img class="responsive-image"src="../../assets/Stock Photos (Purchased)/cake-cafe-owners-with-open-sign-WEGLJ2N.jpg" alt="">
         </div>
     </div>
     <!--Get On The List Section-->
@@ -14,12 +14,12 @@
         <div class="col-md-12">
             <h1 class="list-center-text">Get On "The List"</h1>
             <h3 class="list-center-text">Have a Black Business and you want to get on our list? Click below</h3>
-            <a href=""><button mat-raised-button>Get On "The List"</button></a>
+            <a routerLink = '/joinus'><button mat-raised-button>Get On "The List"</button></a>
         </div>
     </div>
     <div class="row support">
         <div class="col-md-6">
-            <img class="responsive-image"src="https://via.placeholder.com/728x522" alt="">
+            <img class="responsive-image"src="../../assets/Stock Photos (Purchased)/black-male-business-owner-standing-outside-coffee--PU3ZFCQ.jpg" alt="">
         </div>
         <div class="col-md-6">
             <h1>Support Black Owned Now</h1>
@@ -33,13 +33,13 @@
         <div class="col-md-12">
             <h2 id="contact" class="blm-text-downsize">Stay In Touch</h2>
             <h4 class="blm-support-text-downsize">Sign up to hear from us.</h4>
-            <!-- <form action="">
+            <form action="" [formGroup]="EmailForm" (ngSubmit)="sendEmail()">
                 <mat-form-field class="email-input-full-width">
                     <mat-label>Email</mat-label>
-                    <input type="text" matInput>
+                    <input type="text" matInput formControlName="email">
                 </mat-form-field>
                 <button mat-stroked-button type="submit">Submit</button>
-            </form> -->
+            </form>
         </div>
     </div>
 </div>

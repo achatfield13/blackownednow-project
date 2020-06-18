@@ -1,5 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';@Component({
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFireFunctions } from '@angular/fire/functions';
+import { FormControl, FormGroup, Validators, FormGroupDirective } from '@angular/forms';
+
+@Component({
   selector: 'app-contactus',
   templateUrl: './contactus.component.html',
   styleUrls: ['./contactus.component.scss']
@@ -14,14 +18,31 @@ export class ContactusComponent implements OnInit {
     what_programs: new FormControl('')
   })
 
-  constructor() { }
+  EmailForm = new FormGroup({
+    email: new FormControl('', Validators.email),
+  })
+
+  constructor(private afs: AngularFirestore, private fns: AngularFireFunctions) { }
+
+  @ViewChild(FormGroupDirective) formGroupDirective: FormGroupDirective;
+
 
   getInvolved() {
     console.log(this.contactUsForm.value)
-    this.contactUsForm.reset()
-    this.contactUsForm.value.markAsPristine();
-    this.contactUsForm.markAsUntouched();
-    this.contactUsForm.updateValueAndValidity();
+    setTimeout(() => this.formGroupDirective.resetForm(), 0)
+    const callable = this.fns.httpsCallable('createContactData')
+    callable(this.contactUsForm.value).subscribe(data => {
+      console.log('data has been added')
+    })
+  
+  }
+  sendEmail(){
+    console.log(this.EmailForm.value)
+    setTimeout(() => this.formGroupDirective.resetForm(), 0)
+    const callable = this.fns.httpsCallable('createEmailList');
+    callable(this.EmailForm.value).subscribe(data => {
+      console.log("data has been stored")
+    })
   }
 
   ngOnInit(): void {

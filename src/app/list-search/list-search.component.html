@@ -4,7 +4,7 @@
 <div class="ais-InstantSearch">
 <ais-instantsearch [config]="config">
         <header class="header">
-                <ais-search-box ></ais-search-box>
+                <ais-search-box placeholder="Search for business..." ></ais-search-box>
         </header>
         <section class="product-filter">
                 <h1>Black Owned Now - The List</h1>
@@ -26,18 +26,22 @@
                       <main class="main-grid">
                           <article class="grid-item-business" *ngFor="let hit of hits">
                             <div>
-                                <h2><ais-highlight attribute="business_name" [hit]="hit"></ais-highlight></h2>
-                                <span>{{ hit.business_description }}</span>
+                                <ul>
+                                    <li>City: {{ hit.business_city }} </li>
+                                    <li>Category: {{ hit.category }} </li>
+                                    <li>Facebook: {{ hit.facebook_handle }}</li>
+                                    <li>Instagram: {{ hit.instagram_handle }}</li>
+                                </ul>
+                                
                             </div>
                             <div>
-                                <span>City: {{ hit.business_city }}</span>
-                                <span>Instagram: {{ hit.instagram_handle }}</span>
+                               <a href="{{ hit.business_website | removeTrailingCharacter }}"> <h2 id="business_name">{{ hit.business_name }} </h2></a>
                             </div>
                             <div>
-                                <a href="{{ hit.business_website | removeTrailingCharacter }}">
+                                <span id="business_description">{{ hit.business_description }} </span>
+                                <!-- <a href="{{ hit.business_website | removeTrailingCharacter }}">
                                     <button class="pure-material-button-contained">Website</button>
-                                </a>
-                                <span>Facebook: {{ hit.facebook_handle }}</span>
+                                </a> -->
                             </div>
                           </article>
                       </main>

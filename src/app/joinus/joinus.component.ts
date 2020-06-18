@@ -1,6 +1,6 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject, ViewChild } from '@angular/core';
 import { MatDialog, MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators, FormGroupDirective } from '@angular/forms';
 
 import { AuthService } from '../services/auth.service';
 
@@ -308,6 +308,8 @@ export class BlackOwnedNowDialogComponent implements OnInit {
 
  user: string;
 
+ @ViewChild(FormGroupDirective) formGroupDirective: FormGroupDirective;
+
   constructor (public dialogRef: MatDialogRef<BlackOwnedNowDialogComponent>,
     private auth: AuthService,
   @Inject(MAT_DIALOG_DATA) public data, private fs: AngularFirestore) {}
@@ -328,12 +330,21 @@ export class BlackOwnedNowDialogComponent implements OnInit {
       
 
       console.log(this.user)
+      setTimeout(() => this.formGroupDirective.resetForm(), 0)
 
       if(await this.user){
         
         console.log(this.newBusinessForm.value)
         this.fs.collection('test').add({
-          business_name:this.newBusinessForm.value.businessName
+            businessCategory: this.newBusinessForm.value.businessCategory,
+            businessCategoryOther: this.newBusinessForm.value.businessCategoryOther,
+            businessCity: this.newBusinessForm.value.businessCity,
+            businessDescription: this.newBusinessForm.value.businessDescription,
+            businessName: this.newBusinessForm.value.businessName,
+            businessState: this.newBusinessForm.value.businessState,
+            businessWebsite: this.newBusinessForm.value.businessWebsite,
+            facebookHandle: this.newBusinessForm.value.facebookHandle,
+            instagramHandle: this.newBusinessForm.value.instagramHandle
         })
         .then((response => console.log(response)))
         .catch((err) => console.log(err))

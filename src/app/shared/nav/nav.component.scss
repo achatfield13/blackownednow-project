@@ -43,3 +43,23 @@ i {
   border-radius: 50%;
   margin: 0 10px 5px;
 }
+
+div svg{
+  margin-top: .4vw;
+  width: 100%
+}
+
+@media(max-width: 960px){
+  div#logo{
+    display: none;
+  }
+
+.mat-toolbar-row, .mat-toolbar-single-row {
+  height: 64px !important;
+}
+}
+
+.mat-toolbar-row, .mat-toolbar-single-row {
+  height: 143px ;
+}
+
