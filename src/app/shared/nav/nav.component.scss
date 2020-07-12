@@ -49,6 +49,13 @@ div svg{
   width: 100%
 }
 
+div[home-route-only="true"] button{
+  border: 1px solid #C62828;
+  border-radius: 16px;
+}
+
+
+
 @media(max-width: 960px){
   div#logo{
     display: none;
@@ -62,4 +69,6 @@ div svg{
 .mat-toolbar-row, .mat-toolbar-single-row {
   height: 143px ;
 }
+
+
 

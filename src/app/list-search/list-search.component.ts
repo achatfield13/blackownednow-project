@@ -3,7 +3,7 @@ import * as algoliasearch from 'algoliasearch/lite';
 
 const searchClient = algoliasearch(
   '6MUHF7YMDH',
-  'd2499df3158b9e9bd3b79a7a3447a6b3'
+  'a95833de04e344284572019efbfc4424'
 )
 
 @Component({

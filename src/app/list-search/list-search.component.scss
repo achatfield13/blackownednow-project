@@ -7,9 +7,9 @@
   align-items: center;
   background: -webkit-gradient(linear,left top,left bottom,from(#fbc300),to(#c98a00));
   background: linear-gradient(to bottom,#fbc300,#c98a00);
-  background-image: url(../../assets/StockPhotos/millennial-black-businesswoman-listening-to-collea-GQZCD39.jpg);
-  background-image: url(../../assets/StockPhotos/millennial-black-businesswoman-listening-to-collea-GQZCD39.jpg),-webkit-gradient(linear,left top,left bottom,from(#fbc300),to(#c98a00));
-  background-image: url(../../assets/StockPhotos/millennial-black-businesswoman-listening-to-collea-GQZCD39.jpg),linear-gradient(to bottom,#fbc300,#c98a00);
+  background-image: url(../../assets/millennial-black-businesswoman-listening-to-collea-GQZCD39.jpg);
+  background-image: url(../../assets/millennial-black-businesswoman-listening-to-collea-GQZCD39.jpg),-webkit-gradient(linear,left top,left bottom,from(#fbc300),to(#c98a00));
+  background-image: url(../../assets/millennial-black-businesswoman-listening-to-collea-GQZCD39.jpg),linear-gradient(to bottom,#fbc300,#c98a00);
   background-position: center;
   background-size: cover;
   color: #fff;
@@ -286,8 +286,13 @@
       /* Define Auto Row size */
       grid-auto-rows: 300px; 
       /*Define our columns */
-      grid-template-columns: repeat(auto-fill, minmax(600px, 1fr)); 
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
       grid-gap: 1em;
+    }
+
+    ul li{
+      display: inline-block;
+      word-break: break-word;
     }
 
     .grid-item-business{
