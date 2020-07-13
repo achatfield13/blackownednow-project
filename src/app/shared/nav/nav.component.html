@@ -16,7 +16,42 @@
         <a mat-list-item routerLink="/joinus" (click)="drawer.close()">Join us</a>
       </mat-nav-list>
     </mat-sidenav>
-    <mat-sidenav-content>
+    <mat-sidenav-content  *ngIf="router.isActive('/',true)">
+      <mat-toolbar>
+        <button 
+          type="button"
+          aria-label="Toggle sidenav"
+          mat-icon-button
+          (click)="drawer.toggle()"
+          *ngIf="isHandset$ | async">
+  
+  
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+        <div id= "logo" routerLink="/" style="font-size: 2.5rem">
+          <fa-icon [icon]="faInstagram" size="lg" [styles] = "{'stroke': '#bc2a8d', 'color': '#bc2a8d'}"></fa-icon>
+          <fa-icon [icon]="faFacebook" size="lg" [styles] = "{'stroke': '#1877f2', 'color': '#1877f2'}"></fa-icon>
+          <fa-icon [icon]="faTwitter" size="lg" [styles]="{'stroke': '#00acee', 'color': '#00acee'}"></fa-icon>
+          <fa-icon [icon]="faLinkedin" size="lg" [styles]="{'stroke': '#0e76a8', 'color': '#0e76a8'}"></fa-icon>
+          </div>
+  
+        <span class="fill-space"></span>
+        <div *ngIf="!(isHandset$ | async)" home-route-only="true" >
+            <button  mat-raised-button style="font-size: 1.5rem" >
+              Donate
+              <span style="font-size: 0.8rem; color: gainsboro;" >Powered by <fa-icon [icon]="faStripe" size="lg" [styles]="{'stroke': '#0e76a8', 'color': '#0e76a8', 'font-size': '2em' }"></fa-icon></span>
+            </button>
+  
+        </div>
+  
+        
+      </mat-toolbar>
+
+      <ng-content select = "[main]">
+      </ng-content>
+        
+    </mat-sidenav-content>
+    <mat-sidenav-content *ngIf="router.isActive('/joinus',true)" >
   
     <!-- TOP TOOLBAR-->
   
@@ -58,15 +93,15 @@
         </a>
         
         <mat-menu #menu="matMenu">
-          <a mat-menu-item href="https://fireship.page.link/slack">
+          <a mat-menu-item href="https://www.instagram.com/blackownednow/">
             <i>💬</i>
             <span>Instagram</span>
           </a>
-          <a mat-menu-item href="https://fireship.page.link/slack">
+          <a mat-menu-item href="https://twitter.com/blackownednow">
             <i>💬</i>
             <span>Twitter</span>
           </a>
-          <a mat-menu-item href="https://fireship.page.link/slack">
+          <a mat-menu-item href="https://www.facebook.com/blackownednow">
             <i>💬</i>
             <span>Facebook</span>
           </a>
@@ -74,7 +109,7 @@
       </mat-toolbar>
   
       <!-- TRANSCLUSION -->
-      <ng-content>
+      <ng-content select = "[other]">
       </ng-content>
   
     </mat-sidenav-content>

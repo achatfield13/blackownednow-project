@@ -22,7 +22,7 @@ import { NgAisModule } from 'angular-instantsearch';
 import { MenuSelect } from './list-search/busines_city_menu-select.component';
 import { CategoryMenuSelect } from './list-search/category_menu-select.component';
 import { RemoveTrailingCharacterPipe } from './custompipes/remove-whitespace.pipe';
-
+import { MatSidenavModule } from '@angular/material/sidenav';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,6 +41,7 @@ import { RemoveTrailingCharacterPipe } from './custompipes/remove-whitespace.pip
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     BrowserAnimationsModule,
+    MatSidenavModule,
     SharedModule,
     MatDialogModule,
     MatSelectModule,
@@ -48,7 +49,8 @@ import { RemoveTrailingCharacterPipe } from './custompipes/remove-whitespace.pip
     ReactiveFormsModule,
     FormsModule,
     AngularFireModule.initializeApp(environment.firebase),
-    NgAisModule.forRoot()
+    NgAisModule.forRoot(),
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
