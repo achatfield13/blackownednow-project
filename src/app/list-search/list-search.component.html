@@ -1,56 +1,6 @@
-
-
-
-<div class="ais-InstantSearch">
-<ais-instantsearch [config]="config">
-        <header class="header">
-                <ais-search-box placeholder="Search for business..." ></ais-search-box>
-        </header>
-        <section class="product-filter">
-                <h1>Black Owned Now - The List</h1>
-                <div class="sort">
-                    <div class="collection-sort">
-                    <ais-clear-refinements></ais-clear-refinements>
-                    <ais-current-refinements></ais-current-refinements>
-                        <label>Filter By: Category</label>
-                       <ais-category-menu-select attribute="business_category"></ais-category-menu-select> 
-                    </div>
-                    <div class="collection-sort">
-                        <label>Filter By: City</label>
-                        <ais-business-menu-select attribute="business_city"></ais-business-menu-select>
-                  </div>
-                </div>
-            </section>
-              <ais-hits >
-                  <ng-template let-hits="hits">
-                      <main class="main-grid">
-                          <article class="grid-item-business" *ngFor="let hit of hits">
-                            <div>
-                                <ul>
-                                    <li>City: {{ hit.business_city }} </li>
-                                    <li>Category: {{ hit.category }} </li>
-                                    <li>Facebook: {{ hit.facebook_handle }}</li>
-                                    <li>Instagram: {{ hit.instagram_handle }}</li>
-                                </ul>
-                                
-                            </div>
-                            <div>
-                               <a href="{{ hit.business_website | removeTrailingCharacter }}"> <h2 id="business_name">{{ hit.business_name }} </h2></a>
-                            </div>
-                            <div>
-                                <span id="business_description">{{ hit.business_description }} </span>
-                                <!-- <a href="{{ hit.business_website | removeTrailingCharacter }}">
-                                    <button class="pure-material-button-contained">Website</button>
-                                </a> -->
-                            </div>
-                          </article>
-                      </main>
-                  </ng-template>
-              </ais-hits>
-              <div class="results">
-                  <ais-pagination></ais-pagination>
-                  <span><ais-hits-per-page [items]="[{ label: '8 results per page', value: 8, default:true},{label: '4 results per page', value: 4}]"></ais-hits-per-page></span>
-              </div>
-          
-      </ais-instantsearch>
-  </div>
+<div class="grid-wrapper">
+    <div class="sidebar">Sidebar
+        <div class="filter-style">More for filters later</div>
+    </div>
+    <div >List of Businesses</div>
+</div>

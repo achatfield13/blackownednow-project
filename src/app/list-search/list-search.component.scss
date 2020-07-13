@@ -479,7 +479,32 @@
     
     
     
-    
+// Grid Layout testing 
+
+.grid-wrapper{
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: 1.5fr 1.5fr 1.5fr 1.5fr;
+  grid-template-areas: 
+    "sidebar businesses"
+    "sidebar businesses"
+    "sidebar businesses"
+    "sidebar businesses";
+
+}
+
+.sidebar{
+  grid-area: sidebar;
+  background-color: red;
+  margin-left: 2vw;
+}
+
+.filter-style{
+  text-align: center;
+  border-bottom: 1px solid #fff;
+}
+
+
     
     
     
