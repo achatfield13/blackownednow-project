@@ -15,7 +15,7 @@
 
 
   <!-- MailerLite Universal -->
-<script>
+<script defer>
 
   if(window.location.pathname == '/'){
     (function(m,a,i,l,e,r){ m['MailerLiteObject']=e;function f(){
@@ -25,8 +25,16 @@
     _.parentNode.insertBefore(r,_);})(window, document, 'script', 'https://static.mailerlite.com/js/universal.js', 'ml');
     
     var ml_account = ml('accounts', '2200252', 'i4v5z0b1j1', 'load');
+
+    console.log(document.getElementsByClassName('mailerlite-slidebox'))
   }
     </script>
+
+  <style>
+    .mailerlite-slidebox-border {
+    border: 2px solid black;
+}
+  </style>
     <!-- End MailerLite Universal -->
 </head>
 <body class="mat-typography">

@@ -15,7 +15,7 @@ import { NgTemplateOutlet } from '@angular/common';
 export class NavComponent implements OnInit {
 
 
-  isHandset$: Observable<boolean> = this.BreakpointObserver.observe([Breakpoints.Handset])
+  isHandset$: Observable<boolean> = this.BreakpointObserver.observe([Breakpoints.Handset,Breakpoints.Tablet])
     .pipe(
       map(result => result.matches),shareReplay()
     )

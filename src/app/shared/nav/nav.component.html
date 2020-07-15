@@ -14,6 +14,10 @@
         <a mat-list-item routerLink="/contactus" (click)="drawer.close()">Contact us</a>
         <a mat-list-item routerLink="/thelist" (click)="drawer.close()">The List</a>
         <a mat-list-item routerLink="/joinus" (click)="drawer.close()">Join us</a>
+        <button  mat-raised-button style="font-size: 1.1em" >
+          Donate
+          <span style="font-size: 0.8rem; color: gainsboro;" >Powered by <fa-icon [icon]="faStripe" size="lg" [styles]="{'stroke': '#0e76a8', 'color': '#0e76a8', 'font-size': '2em' }"></fa-icon></span>
+        </button>
       </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content  *ngIf="router.isActive('/',true)">
