@@ -17,7 +17,7 @@ svg{
     
     display: block;
     margin: 2em auto;
-    width: 15vw;
+    width: 17vw;
     height: 41px;
     background-color: black;
     color: white;
@@ -49,6 +49,47 @@ svg{
     overflow: visible;
     transform: translate3d(0, 0, 0);
     transition: background 400ms cubic-bezier(0.25, 0.8, 0.25, 1),box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media(max-width:1024px){
+    .center-buttons button{
+    
+        display: block;
+        margin: 2em auto;
+        width: 44vw;
+        height: 41px;
+        background-color: black;
+        color: white;
+        transform:translate(0,-12vh)
+        
+    }
+
+    .mat-raised-button {
+        box-sizing: border-box;
+        position: relative;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        cursor: pointer;
+        outline: none;
+        border: none;
+        -webkit-tap-highlight-color: transparent;
+        display: inline-block;
+        white-space: nowrap;
+        text-decoration: none;
+        vertical-align: baseline;
+        text-align: center;
+        margin: 0;
+        min-width: 64px;
+        line-height: 36px;
+        padding: 0 16px;
+        border-radius: 27px;
+        overflow: visible;
+        transform: translate3d(0, 0, 0);
+        transition: background 400ms cubic-bezier(0.25, 0.8, 0.25, 1),box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
 }
 
 @media(max-width:940px){
@@ -302,7 +343,48 @@ svg{
     
         display: block;
         margin: 2em auto;
-        width: 50vw;
+        width: 72vw;
+        height: 41px;
+        background-color: black;
+        color: white;
+        transform:translate(0,-12vh)
+        
+    }
+
+    .mat-raised-button {
+        box-sizing: border-box;
+        position: relative;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        cursor: pointer;
+        outline: none;
+        border: none;
+        -webkit-tap-highlight-color: transparent;
+        display: inline-block;
+        white-space: nowrap;
+        text-decoration: none;
+        vertical-align: baseline;
+        text-align: center;
+        margin: 0;
+        min-width: 64px;
+        line-height: 36px;
+        padding: 0 16px;
+        border-radius: 27px;
+        overflow: visible;
+        transform: translate3d(0, 0, 0);
+        transition: background 400ms cubic-bezier(0.25, 0.8, 0.25, 1),box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+}
+
+@media(max-width:365px){
+    .center-buttons button{
+    
+        display: block;
+        margin: 2em auto;
+        width: 72vw;
         height: 41px;
         background-color: black;
         color: white;

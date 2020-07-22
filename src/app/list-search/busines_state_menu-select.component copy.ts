@@ -2,8 +2,9 @@ import { Component, Inject, forwardRef } from '@angular/core';
 import { BaseWidget, NgAisInstantSearch } from 'angular-instantsearch';
 import { connectMenu } from 'instantsearch.js/es/connectors';
 
+
 @Component({
-  selector: 'ais-business-menu-select',
+  selector: 'ais-state-menu-select',
   template: `
     <select
       class="menu-select"
@@ -19,7 +20,7 @@ import { connectMenu } from 'instantsearch.js/es/connectors';
     </select>
   `
 })
-export class StateMenuSelect extends BaseWidget {
+export class MenuSelect extends BaseWidget {
   state: {
     items: { label: string; value: string }[];
     createURL: () => string;
@@ -34,11 +35,11 @@ export class StateMenuSelect extends BaseWidget {
     @Inject(forwardRef(() => NgAisInstantSearch))
     public instantSearchParent
   ) {
-    super('StateMenuSelect');
+    super('MenuSelect');
   }
 
   public ngOnInit() {
-    this.createWidget(connectMenu, { attribute: 'business_city' });
+    this.createWidget(connectMenu, { attribute: 'business_state' });
     super.ngOnInit();
   }
 }

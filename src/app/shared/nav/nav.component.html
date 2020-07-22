@@ -20,7 +20,7 @@
         </button>
       </mat-nav-list>
     </mat-sidenav>
-    <mat-sidenav-content  *ngIf="router.isActive('/',true)">
+    <mat-sidenav-content>
       <mat-toolbar>
         <button 
           type="button"
@@ -32,45 +32,30 @@
   
           <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
         </button>
-        <div id= "logo" routerLink="/" style="font-size: 2.5rem">
+        <div id= "logo" routerLink="/" style="font-size: 2.5rem" *ngIf="router.url === '/'">
           <fa-icon [icon]="faInstagram" size="lg" [styles] = "{'stroke': '#bc2a8d', 'color': '#bc2a8d'}"></fa-icon>
           <fa-icon [icon]="faFacebook" size="lg" [styles] = "{'stroke': '#1877f2', 'color': '#1877f2'}"></fa-icon>
           <fa-icon [icon]="faTwitter" size="lg" [styles]="{'stroke': '#00acee', 'color': '#00acee'}"></fa-icon>
           <fa-icon [icon]="faLinkedin" size="lg" [styles]="{'stroke': '#0e76a8', 'color': '#0e76a8'}"></fa-icon>
           </div>
   
-        <span class="fill-space"></span>
-        <div *ngIf="!(isHandset$ | async)" home-route-only="true" >
-            <button  mat-raised-button style="font-size: 1.5rem" >
-              Donate
-              <span style="font-size: 0.8rem; color: gainsboro;" >Powered by <fa-icon [icon]="faStripe" size="lg" [styles]="{'stroke': '#0e76a8', 'color': '#0e76a8', 'font-size': '2em' }"></fa-icon></span>
-            </button>
-  
-        </div>
-  
-        
-      </mat-toolbar>
+        <span class="fill-space" *ngIf="router.url === '/'"></span>
+        <div *ngIf="router.url === '/'">
 
-      <ng-content select = "[main]">
-      </ng-content>
-        
-    </mat-sidenav-content>
-    <mat-sidenav-content *ngIf="router.isActive('/joinus',true)" >
-  
+          <div *ngIf="!(isHandset$ | async)" home-route-only="true" >
+              <button  mat-raised-button style="font-size: 1.5rem" >
+                Donate
+                <span style="font-size: 0.8rem; color: gainsboro;" >Powered by <fa-icon [icon]="faStripe" size="lg" [styles]="{'stroke': '#0e76a8', 'color': '#0e76a8', 'font-size': '2em' }"></fa-icon></span>
+              </button>
+    
+          </div>
+        </div>
+    
     <!-- TOP TOOLBAR-->
   
-      <mat-toolbar>
-        <button 
-          type="button"
-          aria-label="Toggle sidenav"
-          mat-icon-button
-          (click)="drawer.toggle()"
-          *ngIf="isHandset$ | async">
   
   
-          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-        </button>
-        <div id= "logo" routerLink="/">
+        <div id= "logo" routerLink="/" *ngIf="router.url !== '/'">
           <svg width="50%" height="6vw" viewBox="0 0 448 420" fill="none" xmlns="http://www.w3.org/2000/svg">
             <ellipse cx="224" cy="210" rx="224" ry="210" fill="black"/>
             <path d="M88.9414 119V67.8125H105.676C111.23 67.8125 115.402 68.9609 118.191 71.2578C121.004 73.5547 122.41 76.9531 122.41 81.4531C122.41 83.8438 121.73 85.9648 120.371 87.8164C119.012 89.6445 117.16 91.0625 114.816 92.0703C117.582 92.8438 119.762 94.3203 121.355 96.5C122.973 98.6562 123.781 101.234 123.781 104.234C123.781 108.828 122.293 112.438 119.316 115.062C116.34 117.688 112.133 119 106.695 119H88.9414ZM95.6914 95.0586V113.48H106.836C109.977 113.48 112.449 112.672 114.254 111.055C116.082 109.414 116.996 107.164 116.996 104.305C116.996 98.1406 113.645 95.0586 106.941 95.0586H95.6914ZM95.6914 89.6445H105.887C108.84 89.6445 111.195 88.9062 112.953 87.4297C114.734 85.9531 115.625 83.9492 115.625 81.418C115.625 78.6055 114.805 76.5664 113.164 75.3008C111.523 74.0117 109.027 73.3672 105.676 73.3672H95.6914V89.6445ZM139.848 119H133.344V65H139.848V119ZM173.773 119C173.398 118.25 173.094 116.914 172.859 114.992C169.836 118.133 166.227 119.703 162.031 119.703C158.281 119.703 155.199 118.648 152.785 116.539C150.395 114.406 149.199 111.711 149.199 108.453C149.199 104.492 150.699 101.422 153.699 99.2422C156.723 97.0391 160.965 95.9375 166.426 95.9375H172.754V92.9492C172.754 90.6758 172.074 88.8711 170.715 87.5352C169.355 86.1758 167.352 85.4961 164.703 85.4961C162.383 85.4961 160.438 86.082 158.867 87.2539C157.297 88.4258 156.512 89.8438 156.512 91.5078H149.973C149.973 89.6094 150.641 87.7812 151.977 86.0234C153.336 84.2422 155.164 82.8359 157.461 81.8047C159.781 80.7734 162.324 80.2578 165.09 80.2578C169.473 80.2578 172.906 81.3594 175.391 83.5625C177.875 85.7422 179.164 88.7539 179.258 92.5977V110.105C179.258 113.598 179.703 116.375 180.594 118.438V119H173.773ZM162.98 114.043C165.02 114.043 166.953 113.516 168.781 112.461C170.609 111.406 171.934 110.035 172.754 108.348V100.543H167.656C159.688 100.543 155.703 102.875 155.703 107.539C155.703 109.578 156.383 111.172 157.742 112.32C159.102 113.469 160.848 114.043 162.98 114.043ZM204.711 114.395C207.031 114.395 209.059 113.691 210.793 112.285C212.527 110.879 213.488 109.121 213.676 107.012H219.828C219.711 109.191 218.961 111.266 217.578 113.234C216.195 115.203 214.344 116.773 212.023 117.945C209.727 119.117 207.289 119.703 204.711 119.703C199.531 119.703 195.406 117.98 192.336 114.535C189.289 111.066 187.766 106.332 187.766 100.332V99.2422C187.766 95.5391 188.445 92.2461 189.805 89.3633C191.164 86.4805 193.109 84.2422 195.641 82.6484C198.195 81.0547 201.207 80.2578 204.676 80.2578C208.941 80.2578 212.48 81.5352 215.293 84.0898C218.129 86.6445 219.641 89.9609 219.828 94.0391H213.676C213.488 91.5781 212.551 89.5625 210.863 87.9922C209.199 86.3984 207.137 85.6016 204.676 85.6016C201.371 85.6016 198.805 86.7969 196.977 89.1875C195.172 91.5547 194.27 94.9883 194.27 99.4883V100.719C194.27 105.102 195.172 108.477 196.977 110.844C198.781 113.211 201.359 114.395 204.711 114.395ZM237.758 101.387L233.68 105.641V119H227.176V65H233.68V97.6602L237.16 93.4766L249.008 80.9609H256.918L242.117 96.8516L258.641 119H251.012L237.758 101.387Z" fill="#FFFDFD"/>
@@ -79,41 +64,26 @@
             </svg>
           </div>
   
-        <span class="fill-space"></span>
-        <div *ngIf="!(isHandset$ | async)">
-            <a mat-button routerLink="/">Home</a>
-          <a mat-button routerLink="/aboutus">About Us</a>
-          <a mat-button routerLink="/contactus">Contact us</a>
-  
-          <a mat-button routerLink="/thelist">The List</a>
-          <a mat-button routerLink="/joinus">Join Us</a>
-  
+        <span class="fill-space" *ngIf="router.url !== '/'"></span>
+
+        <div *ngIf="router.url !== '/'">
+          <div *ngIf="!(isHandset$ | async)">
+              <a mat-button routerLink="/">Home</a>
+            <a mat-button routerLink="/aboutus">About Us</a>
+            <a mat-button routerLink="/contactus">Contact us</a>
+    
+            <a mat-button routerLink="/thelist">The List</a>
+            <a mat-button routerLink="/joinus">Join Us</a>
+    
+          </div>
         </div>
   
         <!-- DROPDOWN MENU -->
   
-        <a mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
-            Social
-        </a>
-        
-        <mat-menu #menu="matMenu">
-          <a mat-menu-item href="https://www.instagram.com/blackownednow/">
-            <i>💬</i>
-            <span>Instagram</span>
-          </a>
-          <a mat-menu-item href="https://twitter.com/blackownednow">
-            <i>💬</i>
-            <span>Twitter</span>
-          </a>
-          <a mat-menu-item href="https://www.facebook.com/blackownednow">
-            <i>💬</i>
-            <span>Facebook</span>
-          </a>
-        </mat-menu>
       </mat-toolbar>
   
       <!-- TRANSCLUSION -->
-      <ng-content select = "[other]">
+      <ng-content>
       </ng-content>
   
     </mat-sidenav-content>

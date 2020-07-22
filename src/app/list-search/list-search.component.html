@@ -1,6 +1,41 @@
-<div class="grid-wrapper">
-    <div class="sidebar">Sidebar
-        <div class="filter-style">More for filters later</div>
+<ais-instantsearch [config]="config">
+  <div class="grid-search-area">
+    <div class="searchbar">
+      <ais-search-box></ais-search-box>
     </div>
-    <div >List of Businesses</div>
+    <div class="sortby">
+      <h5>Category:</h5>
+      <ais-category-menu-select attribute="category"></ais-category-menu-select>
+    </div>
+    <div class="type">
+      <h5>City</h5>
+      <ais-business-menu-select attribute="business_city"></ais-business-menu-select>
+    </div>
+    <div class="level">
+      <h5>Level</h5>
+      <ais-state-menu-select attribute="business_state"></ais-state-menu-select>
+    </div>
+    <div class="clearall">
+      <ais-clear-refinements></ais-clear-refinements>
+    </div>
+  </div>
+
+</ais-instantsearch>
+
+
+<div class="grid-results-area">
+  <div class="box1">
+    <h5>Business name</h5>
+    <h5>Chicago,IL</h5>
+    <hr>
+  </div>
+  <div class="box2">
+    <h5>Business name</h5>
+  </div>
+  <div class="box3">
+    <h5>Business name</h5>
+  </div>
+  <div class="box4">
+    <h5>Business Name</h5>
+  </div>
 </div>

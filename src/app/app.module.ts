@@ -19,10 +19,11 @@ import { environment } from '../environments/environment';
 import { AuthService } from './services/auth.service';
 import { ListSearchComponent } from './list-search/list-search.component';
 import { NgAisModule } from 'angular-instantsearch';
-import { MenuSelect } from './list-search/busines_city_menu-select.component';
+import { StateMenuSelect } from './list-search/busines_city_menu-select.component';
 import { CategoryMenuSelect } from './list-search/category_menu-select.component';
 import { RemoveTrailingCharacterPipe } from './custompipes/remove-whitespace.pipe';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MenuSelect } from './list-search/busines_state_menu-select.component copy';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,6 +35,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     BlackOwnedNowDialogComponent,
     ListSearchComponent,
     MenuSelect,
+    StateMenuSelect,
     CategoryMenuSelect,
     RemoveTrailingCharacterPipe
   ],
