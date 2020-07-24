@@ -20,22 +20,19 @@
     </div>
   </div>
 
+
+
+<ais-hits>
+<ng-template let-hits = "hits" >
+<div class="main-grid">
+    <div *ngFor="let hit of hits" style="margin: -2vh 1vw">
+      <div class="grid-item-business" >
+        <h5>{{hit.business_name}}</h5>
+        <h5>{{hit.business_city}}</h5>
+      </div>
+    </div>
+  </div>
+</ng-template>
+</ais-hits>
+
 </ais-instantsearch>
-
-
-<div class="grid-results-area">
-  <div class="box1">
-    <h5>Business name</h5>
-    <h5>Chicago,IL</h5>
-    <hr>
-  </div>
-  <div class="box2">
-    <h5>Business name</h5>
-  </div>
-  <div class="box3">
-    <h5>Business name</h5>
-  </div>
-  <div class="box4">
-    <h5>Business Name</h5>
-  </div>
-</div>

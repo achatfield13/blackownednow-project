@@ -11,7 +11,8 @@
     "dev:ssr": "ng run blackownednow:serve-ssr",
     "serve:ssr": "node dist/blackownednow/server/main.js",
     "build:ssr": "ng build --prod && ng run blackownednow:server:production",
-    "prerender": "ng run blackownednow:prerender"
+    "prerender": "ng run blackownednow:prerender",
+    "postinstall": "ngcc"
   },
   "private": true,
   "dependencies": {
