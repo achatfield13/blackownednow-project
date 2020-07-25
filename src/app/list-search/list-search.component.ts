@@ -16,7 +16,8 @@ export class ListSearchComponent implements OnInit {
 
   config = {
     indexName: 'blackownednow-list',
-    searchClient
+    searchClient,
+    hitsPerPage: 5
   }
   
   

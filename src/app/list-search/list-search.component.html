@@ -1,7 +1,8 @@
 <ais-instantsearch [config]="config">
   <div class="grid-search-area">
     <div class="searchbar">
-      <ais-search-box></ais-search-box>
+      <label for="searchBox">Search For Your Favorite Business By: Category, City, or State</label>
+      <ais-search-box placeholder = "Restaurant,Beauty,Retail" id="searchBox"></ais-search-box>
     </div>
     <div class="sortby">
       <h5>Category:</h5>
@@ -12,7 +13,7 @@
       <ais-business-menu-select attribute="business_city"></ais-business-menu-select>
     </div>
     <div class="level">
-      <h5>Level</h5>
+      <h5>State</h5>
       <ais-state-menu-select attribute="business_state"></ais-state-menu-select>
     </div>
     <div class="clearall">
@@ -23,16 +24,27 @@
 
 
 <ais-hits>
-<ng-template let-hits = "hits" >
-<div class="main-grid">
-    <div *ngFor="let hit of hits" style="margin: -2vh 1vw">
-      <div class="grid-item-business" >
-        <h5>{{hit.business_name}}</h5>
-        <h5>{{hit.business_city}}</h5>
+  <ng-template let-hits ="hits">
+    <div class="main">
+  <ais-current-refinements></ais-current-refinements>
+        <ul class="cards">
+            <li class="cards_item" *ngFor="let hit of hits">
+              <div class="card">
+                <div class="card_image"><img src="../../assets/blackowned-placeholder.png"></div>
+                <div class="card_content">
+                  <h2 class="card_title">{{hit.business_name}}</h2>
+                  <p class="card_text">{{hit.business_city}}<span>,{{hit.business_state}}</span></p>
+                  <p class="card_text">{{hit.business_description}}</p>
+                  <a href="hit.business_website"><button class="btn card_btn">Visit Website</button></a>
+                </div>
+              </div>
+            </li>
+        </ul>
       </div>
-    </div>
-  </div>
-</ng-template>
+      <ais-pagination showNext="false"></ais-pagination>
+    </ng-template>
+
 </ais-hits>
+
 
 </ais-instantsearch>
